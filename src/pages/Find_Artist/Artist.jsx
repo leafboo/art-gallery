@@ -5,7 +5,7 @@ export default function Artist(props) {
   return (
     <div className={ArtistCSS['artist-container']}>
       <img className={ArtistCSS['profile-picture']} src={props.profilePicture} alt="" />
-      <span>{props.name}</span>
+      <span className={ArtistCSS['name']}>{props.name}</span>
     </div>
   )
 }

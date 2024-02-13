@@ -1,8 +1,15 @@
 .artist-container {
+  margin-top: 1rem;
   display: flex;
   align-items: center;
-  width: 40vw;
+  width: 38vw;
 }
 .profile-picture {
   width: 3.4rem;
+}
+.name {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  font-family: "Inria sans";
+  font-weight: 700;
 }

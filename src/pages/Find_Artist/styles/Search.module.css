@@ -1,21 +1,22 @@
 .search-container {
-  margin-top: 3.5rem;
+
   display: flex;
   align-items: center;
-  justify-content: center;
+  position: relative;
+  width: 41vw;
 }
 .inner-search-container {
-  width: 40vw;
+ 
   position: relative;
   display: flex;
   align-items: center;
 }
 .search-bar {
-  width: 40vw;
+  width: 41vw;
   height: 2.5rem;
   border-radius: 50px;
-  border: 2px solid;
-  font-size: 1.5rem;
+  border: 1px solid;
+  font-size: 1.6rem;
   font-weight: 700;
   font-family: 'Inria sans';
   padding-left: 4.4rem;
