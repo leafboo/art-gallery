@@ -1,11 +1,17 @@
 .search-container {
-  margin-top: 50px;
+  margin-top: 3.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+.inner-search-container {
+  width: 40vw;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .search-bar {
-  width: 30vw;
+  width: 40vw;
   height: 2.5rem;
   border-radius: 50px;
   border: 2px solid;
