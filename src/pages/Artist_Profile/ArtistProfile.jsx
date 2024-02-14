@@ -6,8 +6,10 @@ import Artworks from "./Artworks/Artworks.jsx"
 export default function ArtistProfile() {
   return (
     <div className={ArtistProfileCSS['artist-profile-container']}>
-      <Details />
-      <Artworks />
+      <div className={ArtistProfileCSS['inner-container']}>
+        <Details />
+        <Artworks />
+      </div>
     </div>
   )
 }
