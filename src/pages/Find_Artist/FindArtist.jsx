@@ -3,6 +3,7 @@ import FindArtistCSS from "./styles/FindArtist.module.css"
 import Search from "./Search.jsx"
 import BackButton from "./BackButton.jsx"
 import ExistingFavArtists from "./ExistingFavArtists.jsx"
+import DisplayMode from "../DisplayMode.jsx"
 
 export default function FindArtist() {
   return (
@@ -10,6 +11,7 @@ export default function FindArtist() {
       <BackButton />
       <Search />
       <ExistingFavArtists />
+      <DisplayMode />
     </div>
     
   )

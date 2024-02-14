@@ -28,6 +28,6 @@
   cursor: pointer;
   transition: transform 0.15s;
 }
-.magnifying-glass:hover {
+.search-bar:focus + .magnifying-glass {
   transform: scale(1.2);
 }
