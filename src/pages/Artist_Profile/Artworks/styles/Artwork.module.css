@@ -1,5 +1,10 @@
 .artwork {
-  height: 13rem;
-  width: 13rem;
+  height: 18rem;
+  width: 18rem;
   object-fit:cover;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+.artwork:hover {
+  filter: brightness(60%);
 }

@@ -1,5 +1,5 @@
 .artworks-container {
-  margin-top: 10rem;
+  margin-top: 15rem;
   display: grid;
   grid-template-columns: auto auto auto auto;
   row-gap: 1rem;
