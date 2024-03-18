@@ -1,3 +1,6 @@
+# Art gallery project ✏️
+Edit this later
+
 # To run: ⚡
 
 "npm install" to install vite  
