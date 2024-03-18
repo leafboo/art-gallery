@@ -3,7 +3,7 @@
 "npm install" to install vite  
 "npm run dev" to run application
 
-# Light Mode
+# Light Mode ☀️
 Slide show: 
 ![lightMode_home](https://github.com/leafboo/art-gallery/assets/110758056/859a6379-3aec-409c-a9be-325617405432)
 
@@ -16,7 +16,7 @@ My favorite artists:
 Add artists to favorite:
 ![lightMode_add](https://github.com/leafboo/art-gallery/assets/110758056/9b3dd943-c4d0-4045-9d9b-b064fa14abe0)
 
-# Dark Mode
+# Dark Mode 🌓
 Slide show: 
 ![darkMode_home](https://github.com/leafboo/art-gallery/assets/110758056/d14fb46e-532c-476c-ac59-1e99433130ef)
 
