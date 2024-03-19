@@ -4,11 +4,21 @@ import Details from "./Details/Details.jsx"
 import Artworks from "./Artworks/Artworks.jsx"
 
 export default function ArtistProfile() {
+  const [artistsData, setArtistsData] = React.useState([])
+  React.useEffect(() => {
+    async function fetchData() {
+        const response = await fetch("https://danbooru.donmai.us/posts.json?tags=ciloranko")
+        const data = await response.json()
+        setArtistsData(data)
+    }
+    fetchData()
+  }, [])
+
   return (
     <div className={ArtistProfileCSS['artist-profile-container']}>
       <div className={ArtistProfileCSS['inner-container']}>
         <Details />
-        <Artworks />
+        <Artworks artistsData={artistsData}/>
       </div>
     </div>
   )
