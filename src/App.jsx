@@ -8,6 +8,7 @@ export default function App() {
   return (
     <div>
       <ArtistProfile />
+      {/*<FindArtist/ >*/}
       <DisplayMode />
     </div>
   )
