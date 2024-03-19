@@ -3,6 +3,7 @@
   justify-content: center;
 }
 .inner-container {
+  padding-top: 2rem;
   width: 88vw;
   display: flex;
   flex-direction: column;

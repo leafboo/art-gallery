@@ -4,7 +4,6 @@ import ArtworksCSS from "./styles/Artworks.module.css"
 
 export default function Artworks({artistsData}) {
   const artworks = artistsData.map(data => data.media_asset.variants[4].url)
-  console.log(artworks)
   const ArtistsElement = artworks.map( artwork => <Artwork image={artwork}/> )
 
   
