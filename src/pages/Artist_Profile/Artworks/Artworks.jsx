@@ -1,24 +1,26 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 import Artwork from "./Artwork.jsx"
 import ArtworksCSS from "./styles/Artworks.module.css"
 
 export default function Artworks() {
-  const [artistsData, setArtistsData] = useState(null)
+  const [artistsData, setArtistsData] = React.useState([])
 
-  useEffect(() => {
-    const fetchData = async() => {
-      try {
+  console.log('component rendered')
+  React.useEffect(() => {
+    async function fetchData() {
         const response = await fetch("https://danbooru.donmai.us/posts.json?tags=ciloranko")
         const data = await response.json()
         setArtistsData(data)
-      } catch(err) {
-        console.error(err)
-      }
     }
     fetchData()
   }, [])
 
   console.log(artistsData)
+
+  //const ArtistsElement = artistsData.map(artist => 
+  //  <Artwork image={artist}/>
+
+  //)
 
   
   return (
