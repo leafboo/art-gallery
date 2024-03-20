@@ -1,12 +1,30 @@
 .profile-container {
-  width: 88vw;
+  width: 75rem;
+  height: 18rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  padding-bottom: 3rem;
+}
+.profile-picture-container {
+  height: 18rem;
+  width: 13rem;
+  display: flex;
   align-items: center;
 }
 .profile-picture {
-  width: 10rem;
+  width: 11rem;
   border-radius: 50rem;
+}
+
+.name-container{
+  height: 18rem;
+  width: 30rem;
+  position: relative;
+}
+.name {
   position: absolute;
-  left: 6rem;
+  top: 4.7rem;
+  font-family: Inria Sans;
+  font-weight: 700;
+  font-size: 2rem;
 }
