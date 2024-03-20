@@ -17,7 +17,7 @@ export default function ArtistProfile() {
   return (
     <div className={ArtistProfileCSS['artist-profile-container']}>
       <div className={ArtistProfileCSS['inner-container']}>
-        <Details />
+        <Details artistsData={artistsData}/>
         <Artworks artistsData={artistsData}/>
       </div>
     </div>

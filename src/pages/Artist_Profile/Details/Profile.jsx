@@ -8,7 +8,7 @@ export default function Profile(props) {
         <img className={ProfileCSS['profile-picture']} src={props.profilePicture} alt="Profile Picture." />
       </div>
       <div className={ProfileCSS['name-container']}>
-        <div className={ProfileCSS['name']}>name here</div>
+        <div className={ProfileCSS['name']}>{props.name}</div>
       </div>
       
     </div>
