@@ -3,9 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 95vh;
+  height: 98vh;
 }
 
 .artwork{
-  width: 44rem;
+  height: 80vh;
 }
