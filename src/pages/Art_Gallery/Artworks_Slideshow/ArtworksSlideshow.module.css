@@ -1,3 +1,11 @@
+.artworks-slideshow-container {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+}
+
 .artwork{
   width: 44rem;
 }
