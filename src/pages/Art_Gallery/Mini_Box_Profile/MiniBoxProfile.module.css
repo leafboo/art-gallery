@@ -6,3 +6,11 @@
 .profile-picture {
   height: 4rem;
 }
+.name {
+  position: absolute;
+  top: .3rem;
+  margin-left: 1rem;
+  font-family: Inria Sans;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
