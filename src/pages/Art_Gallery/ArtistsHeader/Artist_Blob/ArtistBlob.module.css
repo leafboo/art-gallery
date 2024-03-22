@@ -1,0 +1,11 @@
+.profile-picture {
+  height: 4rem;
+  border-radius: 4rem;
+  margin-left: .8rem;
+  opacity: .6;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.profile-picture:hover {
+  opacity: 1;
+}
