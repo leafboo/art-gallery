@@ -6,9 +6,17 @@ import ArtGallery from "./pages/Art_Gallery/ArtGallery.jsx"
 
 
 export default function App() {
+  const [toggleComponent, setToggleComponent] = React.useState(true)
+
+  function switchPages() {
+    setToggleComponent(prevToggleComponent => !prevToggleComponent)
+    console.log("hello")
+  }
+  
   return (
     <div>
-      <ArtGallery />
+      {toggleComponent ? (<ArtGallery onImageClick={switchPages} />) : (<ArtistProfile />)}
+      
       {/*<ArtistProfile />*/}
       {/*<FindArtist/ >*/}
       <DisplayMode />
