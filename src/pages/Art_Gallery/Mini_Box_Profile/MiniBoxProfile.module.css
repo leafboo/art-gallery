@@ -5,6 +5,11 @@
 }
 .profile-picture {
   height: 4rem;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+.profile-picture:hover {
+  filter: brightness(70%);
 }
 .name {
   position: absolute;
