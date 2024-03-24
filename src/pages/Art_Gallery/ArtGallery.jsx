@@ -4,9 +4,18 @@ import MiniBoxProfile from "./Mini_Box_Profile/MiniBoxProfile.jsx"
 import ArtGalleryCSS from "./ArtGallery.module.css"
 
 export default function ArtGallery(props) {
+  React.useEffect(() => {
+    async function fetchData() {
+        const response = await fetch("https://danbooru.donmai.us/posts.json?tags=ciloranko")
+        const data = await response.json()
+        props.setArtistsData(data)
+    }
+    fetchData()
+  }, [])
+  
   return (
     <div className={ArtGalleryCSS['art-gallery-container']}>
-      <ArtworksSlideshow onImageClick={props.onImageClick}/>
+      <ArtworksSlideshow onImageClick={props.onImageClick} artistsData={props.artistsData} imageIndex={props.imageIndex} />
     </div>
   )
 }

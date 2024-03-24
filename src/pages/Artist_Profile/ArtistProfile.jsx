@@ -17,7 +17,7 @@ export default function ArtistProfile(props) {
     <div className={ArtistProfileCSS['artist-profile-container']}>
       <div className={ArtistProfileCSS['inner-container']}>
         <Details artistsData={props.artistsData}/>
-        <Artworks artistsData={props.artistsData} onImageClick={props.onImageClick} />
+        <Artworks artistsData={props.artistsData} onImageClick={props.onImageClick} getImageIndex={props.getImageIndex} />
       </div>
     </div>
   )
