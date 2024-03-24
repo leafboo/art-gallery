@@ -15,6 +15,10 @@ export default function App() {
     }
   }, [])
 
+
+  // DATA FOR ARTISTS PROFILE
+  const [artistsData, setArtistsData] = React.useState([])
+
   function switchPages() {
     setToggleComponent(prevToggleComponent => !prevToggleComponent)
     // Store the updated state in localStorage
@@ -23,7 +27,7 @@ export default function App() {
   
   return (
     <div>
-      {toggleComponent ? (<ArtGallery onImageClick={switchPages} />) : (<ArtistProfile onImageClick={switchPages} />)}
+      {toggleComponent ? (<ArtGallery onImageClick={switchPages} />) : (<ArtistProfile artistsData={artistsData} setArtistsData={setArtistsData} onImageClick={switchPages} />)}
       
       {/*<ArtistProfile />*/}
       {/*<FindArtist/ >*/}
