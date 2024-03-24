@@ -3,7 +3,7 @@ import ArtistProfileCSS from "./styles/ArtistProfile.module.css"
 import Details from "./Details/Details.jsx"
 import Artworks from "./Artworks/Artworks.jsx"
 
-export default function ArtistProfile() {
+export default function ArtistProfile(props) {
   const [artistsData, setArtistsData] = React.useState([])
   React.useEffect(() => {
     async function fetchData() {
@@ -18,7 +18,7 @@ export default function ArtistProfile() {
     <div className={ArtistProfileCSS['artist-profile-container']}>
       <div className={ArtistProfileCSS['inner-container']}>
         <Details artistsData={artistsData}/>
-        <Artworks artistsData={artistsData}/>
+        <Artworks artistsData={artistsData} onImageClick={props.onImageClick} />
       </div>
     </div>
   )

@@ -8,14 +8,22 @@ import ArtGallery from "./pages/Art_Gallery/ArtGallery.jsx"
 export default function App() {
   const [toggleComponent, setToggleComponent] = React.useState(true)
 
+  React.useEffect(() => {
+    const storedToggleComponent = localStorage.getItem('toggleComponent')
+    if (storedToggleComponent !== null) {
+      setToggleComponent(storedToggleComponent === 'true')
+    }
+  }, [])
+
   function switchPages() {
     setToggleComponent(prevToggleComponent => !prevToggleComponent)
-    console.log("hello")
+    // Store the updated state in localStorage
+    localStorage.setItem('toggleComponent', !toggleComponent);
   }
   
   return (
     <div>
-      {toggleComponent ? (<ArtGallery onImageClick={switchPages} />) : (<ArtistProfile />)}
+      {toggleComponent ? (<ArtGallery onImageClick={switchPages} />) : (<ArtistProfile onImageClick={switchPages} />)}
       
       {/*<ArtistProfile />*/}
       {/*<FindArtist/ >*/}
