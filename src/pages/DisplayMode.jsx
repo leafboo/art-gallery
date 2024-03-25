@@ -5,10 +5,14 @@ import DisplayModeCSS from "./DisplayMode.module.css"
 
 
 export default function DisplayMode() {
-  const [mode, setMode] = React.useState(true)
+  const [mode, setMode] = React.useState(() => {
+    const localMode = localStorage.getItem('mode')
+    return localMode === null ? true : JSON.parse(localMode)
+  })
 
   function changeMode() {
     setMode(prevMode => !prevMode)
+    localStorage.setItem('mode', !mode)
   }
   
   React.useLayoutEffect(() => {
