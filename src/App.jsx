@@ -6,13 +6,15 @@ import ArtGallery from "./pages/Art_Gallery/ArtGallery.jsx"
 
 
 export default function App() {
+  // switch between ArtGallery and ArtistProfile
   const [toggleComponent, setToggleComponent] = React.useState(true)
 
   // save image index of clicked image in artists profile to display the image in art gallery
-  const [currentImageIndex, setCurrentImageIndex] = React.useState(3)
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(parseInt(localStorage.getItem('currentImageIndex')) ?? 3)
 
   function getImageIndex(index) {
     setCurrentImageIndex(index)
+    localStorage.setItem('currentImageIndex', index)
   }
 
 
