@@ -4,8 +4,7 @@ import Profile from "./Profile.jsx"
 import Socials from "./Socials.jsx"
 
 export default function Details(props) {
-  
-  const [name, setName] = React.useState(null); // Initialize name state as null
+  const [name, setName] = React.useState(null);
 
   React.useEffect(() => {
     // Check if artistsData exists and has at least one item
@@ -14,7 +13,7 @@ export default function Details(props) {
       setName(artistName); // Set the name once data is available
     }
   }, [props.artistsData]); // Re-run effect whenever artistsData changes
-  console.log(name)
+  console.log(props.artistsData)
 
   return (
     <div className={DetailsCSS['details-container']}>
