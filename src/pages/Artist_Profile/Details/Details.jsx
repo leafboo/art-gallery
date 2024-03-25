@@ -13,7 +13,6 @@ export default function Details(props) {
       setName(artistName); // Set the name once data is available
     }
   }, [props.artistsData]); // Re-run effect whenever artistsData changes
-  console.log(props.artistsData)
 
   return (
     <div className={DetailsCSS['details-container']}>
