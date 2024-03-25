@@ -1,6 +1,27 @@
+
 .dark-mode-logo {
   width: 2rem;
   position: fixed;
-  bottom: .2rem;
-  right: .2rem;
+  bottom: .3rem;
+  right: .3rem;
+  cursor: pointer;
+  transition: transform 0.15s;
 }
+.dark-mode-logo:hover {
+  transform: scale(1.5);
+}
+
+
+
+.light-mode-logo {
+  width: 2rem;
+  position: fixed;
+  bottom: .4rem;
+  right: .4rem;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.light-mode-logo:hover {
+  transform: scale(1.5);
+}
+
