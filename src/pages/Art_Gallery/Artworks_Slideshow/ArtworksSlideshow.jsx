@@ -11,7 +11,7 @@ export default function ArtworksSlideshow(props) {
 
   return (
     <div className={ArtworksSlideshowCSS['artworks-slideshow-container']}>
-      <ArtistsHeader />
+      <ArtistsHeader onImageClick={props.onImageClick} />
       <img src={displayImage} alt="Artwork." className={ArtworksSlideshowCSS['artwork']} />
       <MiniBoxProfile onImageClick={props.onImageClick} />
     </div>
