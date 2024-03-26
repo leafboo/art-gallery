@@ -16,7 +16,8 @@ export default function ArtGallery(props) {
     <div className={ArtGalleryCSS['art-gallery-container']}>
       <ArtworksSlideshow onImageClick={props.onImageClick} 
                          artistsData={props.artistsData} 
-                         imageIndex={props.imageIndex} />
+                         currentImageIndex={props.currentImageIndex} 
+                         setCurrentImageIndex={props.setCurrentImageIndex}/>
     </div>
   )
 }

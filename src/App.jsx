@@ -16,15 +16,6 @@ export default function App() {
   // DATA FOR ARTISTS PROFILE
   const [artistsData, setArtistsData] = React.useState([])
 
-  /* retain page when refreshing
-  React.useEffect(() => {
-    const storedToggleComponent = localStorage.getItem('toggleComponent')
-    if (storedToggleComponent !== null) {
-      setToggleComponent(storedToggleComponent === 'true')
-    }
-  }, [])
-  */
-
 
   function getImageIndex(index) {
     setCurrentImageIndex(index)
@@ -36,12 +27,6 @@ export default function App() {
     localStorage.setItem('switchComponent', num)
     console.log(num)
   }
-  
-  /*
-  
-
-  
-  */
 
 
   return (
@@ -50,7 +35,8 @@ export default function App() {
           <ArtGallery onImageClick={switchPages} 
                       artistsData={artistsData} 
                       setArtistsData={setArtistsData} 
-                      imageIndex={currentImageIndex} />
+                      currentImageIndex={currentImageIndex}
+                      setCurrentImageIndex={setCurrentImageIndex} />
           ) : switchComponent === 2 ? (
           <ArtistProfile artistsData={artistsData} 
                          setArtistsData={setArtistsData} 
