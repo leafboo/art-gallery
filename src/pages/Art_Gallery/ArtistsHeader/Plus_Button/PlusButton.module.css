@@ -1,0 +1,25 @@
+
+.plus-button-container {
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: .8rem;
+  background-color: rgb(212, 212, 212);
+  border-radius: 4rem;
+  cursor: pointer;
+  opacity: .6;
+  transition: opacity 0.15s;
+}
+
+.plus-button {
+  height: 2.4rem;
+  opacity: .6;
+  transition: opacity 0.15s;
+}
+
+.plus-button-container:hover,
+.plus-button-container:hover .plus-button {
+  opacity: .9;
+}
