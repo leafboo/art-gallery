@@ -1,6 +1,6 @@
 import React from "react"
 import PlusButtonCSS from "./PlusButton.module.css"
-import plusButton from "../../../../assets/plusButton.png"
+import plusButton from "../../../../../assets/plusButton.png"
 
 export default function PlusButton(props) {
   return (

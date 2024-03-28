@@ -1,7 +1,7 @@
 import React from "react"
 import ArtworksSlideshowCSS from "./ArtworksSlideshow.module.css"
-import MiniBoxProfile from "../Mini_Box_Profile/MiniBoxProfile"
-import ArtistsHeader from "../ArtistsHeader/ArtistsHeader"
+import MiniBoxProfile from "./Mini_Box_Profile/MiniBoxProfile"
+import ArtistsHeader from "./ArtistsHeader/ArtistsHeader"
 import ImageNavigator from "./Image_Navigator/ImageNavigator"
 
 export default function ArtworksSlideshow(props) {
