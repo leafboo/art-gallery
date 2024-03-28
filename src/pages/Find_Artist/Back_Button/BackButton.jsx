@@ -1,6 +1,6 @@
 import React from "react" 
-import BackButtonCSS from "./styles/BackButton.module.css"
-import leftArrow from "../../assets/leftArrowBlack.png"
+import BackButtonCSS from "./BackButton.module.css"
+import leftArrow from "../../../assets/leftArrowBlack.png"
 
 
 export default function BackButton(props) {

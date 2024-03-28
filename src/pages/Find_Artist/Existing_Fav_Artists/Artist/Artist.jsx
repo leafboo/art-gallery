@@ -1,5 +1,5 @@
 import React from "react"
-import ArtistCSS from "./styles/Artist.module.css"
+import ArtistCSS from "./Artist.module.css"
 
 export default function Artist(props) {
   return (

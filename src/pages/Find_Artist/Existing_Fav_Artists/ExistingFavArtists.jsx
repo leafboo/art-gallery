@@ -1,6 +1,6 @@
 import React from "react"
-import Artist from "./Artist.jsx"
-import ExistingFavArtistsCSS from "./styles/ExistingFavArtists.module.css"
+import Artist from "./Artist/Artist.jsx"
+import ExistingFavArtistsCSS from "./ExistingFavArtists.module.css"
 
 export default function ExistingFavArtists() {
   return (

@@ -1,8 +1,8 @@
 import React from "react"
-import FindArtistCSS from "./styles/FindArtist.module.css"
-import Search from "./Search.jsx"
-import BackButton from "./BackButton.jsx"
-import ExistingFavArtists from "./ExistingFavArtists.jsx"
+import FindArtistCSS from "./FindArtist.module.css"
+import Search from "./Search/Search.jsx"
+import BackButton from "./Back_Button/BackButton.jsx"
+import ExistingFavArtists from "./Existing_Fav_Artists/ExistingFavArtists.jsx"
 
 export default function FindArtist(props) {
   return (

@@ -1,6 +1,6 @@
 import React from "react"
-import darkModeLogo from "../assets/darkModeLogo.png"
-import lightModeLogo from "../assets/lightModeLogo.png"
+import darkModeLogo from "../../assets/darkModeLogo.png"
+import lightModeLogo from "../../assets/lightModeLogo.png"
 import DisplayModeCSS from "./DisplayMode.module.css"
 
 
