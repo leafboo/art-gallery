@@ -1,25 +1,22 @@
 import React from "react"
 import Artist from "./Artist/Artist.jsx"
 import ExistingFavArtistsCSS from "./ExistingFavArtists.module.css"
+import defaultProfile from "../../../assets/defaultProfile.png"
 
-export default function ExistingFavArtists() {
+export default function ExistingFavArtists(props) {
+
+  let artists = []
+  if (props.foundArtist) {
+    artists = props.foundArtist.map(artist => 
+      <Artist profilePicture={defaultProfile}
+              name={artist.name}
+      />)
+  }
+  
+
   return (
     <div className={ExistingFavArtistsCSS['existing-artists-container']}>
-
-      <Artist profilePicture="https://pbs.twimg.com/profile_images/1155680462464942081/JBCvjutU_400x400.jpg" 
-              name="米山 舞 Yoneyama Mai"
-      />
-
-      <Artist profilePicture="https://pbs.twimg.com/profile_images/1564831789625257984/W4F7yvkP_400x400.jpg" 
-              name="TrNyteal"
-      />
-
-      <Artist profilePicture="https://pbs.twimg.com/profile_images/1377908153052917760/7YPJXGir_400x400.jpg" 
-              name="Fajyobore"
-      />
-
-      
-      
+      {artists}
     </div>
   )
 }

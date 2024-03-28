@@ -7,14 +7,17 @@ import ExistingFavArtists from "./Existing_Fav_Artists/ExistingFavArtists.jsx"
 export default function FindArtist(props) {
   const [foundArtist, setFoundArtist] = React.useState(null)
 
-  
-  console.log(foundArtist) // TEMPORARY
+  if (foundArtist) {
+    const results = foundArtist.map((artist) => ({name: artist.name, other_names: artist.other_names}))
+    
+  }
+ 
 
   return (
     <div className={FindArtistCSS['find-artist-container']}>
       <BackButton onImageClick={props.onImageClick} />
       <Search foundArtist={foundArtist} setFoundArtist={setFoundArtist} />
-      <ExistingFavArtists />
+      <ExistingFavArtists foundArtist={foundArtist} />
     </div>
     
   )
