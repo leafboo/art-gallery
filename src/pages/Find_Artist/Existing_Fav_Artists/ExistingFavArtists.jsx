@@ -12,7 +12,6 @@ export default function ExistingFavArtists(props) {
               name={artist.name}
       />)
   }
-  
 
   return (
     <div className={ExistingFavArtistsCSS['existing-artists-container']}>

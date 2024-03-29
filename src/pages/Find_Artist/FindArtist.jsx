@@ -7,11 +7,7 @@ import ExistingFavArtists from "./Existing_Fav_Artists/ExistingFavArtists.jsx"
 export default function FindArtist(props) {
   const [foundArtist, setFoundArtist] = React.useState(null)
 
-  if (foundArtist) {
-    const results = foundArtist.map((artist) => ({name: artist.name, other_names: artist.other_names}))
-    
-  }
- 
+  console.log(foundArtist)
 
   return (
     <div className={FindArtistCSS['find-artist-container']}>
@@ -19,6 +15,5 @@ export default function FindArtist(props) {
       <Search foundArtist={foundArtist} setFoundArtist={setFoundArtist} />
       <ExistingFavArtists foundArtist={foundArtist} />
     </div>
-    
   )
 }
