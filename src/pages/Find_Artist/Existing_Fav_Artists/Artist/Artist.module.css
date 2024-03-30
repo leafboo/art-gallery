@@ -2,7 +2,16 @@
   margin-top: 1rem;
   display: flex;
   align-items: center;
+  justify-content: left;
+  padding-left: 2vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
   width: 38vw;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.artist-container:hover {
+  background-color: rgb(229, 229, 229);
 }
 .profile-picture {
   width: 3.4rem;
