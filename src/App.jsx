@@ -15,6 +15,11 @@ export default function App() {
   const [currentImageIndex, setCurrentImageIndex] = React.useState(parseInt(localStorage.getItem('currentImageIndex')) ?? 3)
   // DATA FOR ARTISTS PROFILE
   const [artistsData, setArtistsData] = React.useState([])
+  
+  const [mode, setMode] = React.useState(() => {
+    const localMode = localStorage.getItem('mode')
+    return localMode === null ? true : JSON.parse(localMode)
+  })
 
 
   function getImageIndex(index) {
@@ -45,7 +50,7 @@ export default function App() {
           ) : switchComponent === 3 ? (
             <FindArtist onImageClick={switchPages}/>
           ) : null }
-      <DisplayMode />
+      <DisplayMode mode={mode} setMode={setMode} />
     </div>
   )
 }
