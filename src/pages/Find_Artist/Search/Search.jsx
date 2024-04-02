@@ -1,5 +1,7 @@
 import React from "react"
 import SearchCSS from "./Search.module.css"
+import magnifyingGlassLight from "../../../assets/magnifyingGlassLight.png"
+import magnifyingGlassDark from "../../../assets/magnifyingGlassDark.png"
 
 export default function Search(props) {
   const [name, setName] = React.useState('')
@@ -19,8 +21,8 @@ export default function Search(props) {
 
   return (
     <div className={SearchCSS['search-container']}>
-      <input className={SearchCSS['search-bar']} type="text" value={name} onChange={(event) => { setName(event.target.value) }} />
-      <img className={SearchCSS['magnifying-glass']} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/1200px-Magnifying_glass_icon.svg.png" alt="Magnifying glass." />
+      <input className={`${SearchCSS['search-bar']} ${props.mode ? SearchCSS['light'] : SearchCSS['dark']}`} type="text" value={name} onChange={(event) => { setName(event.target.value) }} />
+      <img className={SearchCSS['magnifying-glass']} src={props.mode ? magnifyingGlassDark : magnifyingGlassLight} alt="Magnifying glass." />
     </div>
   )
 }

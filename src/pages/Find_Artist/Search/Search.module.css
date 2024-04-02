@@ -22,6 +22,14 @@
   padding-left: 4.4rem;
   background-color: transparent;
 }
+.light{
+  border-color: black;
+  color: black;
+}
+.dark {
+  border-color: white;
+  color: white;
+}
 .magnifying-glass {
   width: 1.9rem;
   position: absolute;

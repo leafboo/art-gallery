@@ -48,7 +48,8 @@ export default function App() {
                          onImageClick={switchPages} 
                          getImageIndex={getImageIndex} />
           ) : switchComponent === 3 ? (
-            <FindArtist onImageClick={switchPages}/>
+            <FindArtist onImageClick={switchPages}
+                        mode={mode} />
           ) : null }
       <DisplayMode mode={mode} setMode={setMode} />
     </div>
