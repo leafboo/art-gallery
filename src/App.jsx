@@ -3,6 +3,7 @@ import FindArtist from "./pages/Find_Artist/FindArtist.jsx"
 import ArtistProfile from "./pages/Artist_Profile/ArtistProfile.jsx"
 import DisplayMode from "./pages/Display_Mode/DisplayMode.jsx"
 import ArtGallery from "./pages/Art_Gallery/ArtGallery.jsx"
+import ArtistProfileSearch from "./pages/Artist_Profile copy/ArtistProfileSearch.jsx"
 
 
 export default function App() {
@@ -20,6 +21,8 @@ export default function App() {
     const localMode = localStorage.getItem('mode')
     return localMode === null ? true : JSON.parse(localMode)
   })
+
+  
 
 
   function getImageIndex(index) {
@@ -49,7 +52,11 @@ export default function App() {
                          getImageIndex={getImageIndex} />
           ) : switchComponent === 3 ? (
             <FindArtist onImageClick={switchPages}
-                        mode={mode} />
+                        mode={mode} 
+                        switchPages={switchPages} 
+                        />
+          ) : switchComponent === 4 ? (
+            <ArtistProfileSearch />
           ) : null }
       <DisplayMode mode={mode} setMode={setMode} />
     </div>
