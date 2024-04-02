@@ -11,7 +11,12 @@
   transition: background-color 0.15s;
 }
 .artist-container:hover {
+}
+.light-mode:hover {
   background-color: rgb(229, 229, 229);
+}
+.dark-mode:hover {
+  background-color: rgb(26, 26, 26);
 }
 .profile-picture {
   width: 3.4rem;
