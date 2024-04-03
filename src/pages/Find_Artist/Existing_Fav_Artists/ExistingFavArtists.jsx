@@ -12,7 +12,7 @@ export default function ExistingFavArtists(props) {
       <Artist profilePicture={props.mode ? defaultProfileDark : defaultProfileLight}
               name={artist.name}
               mode={props.mode}
-              switchPages={props.switchPages}
+              onImageClick={props.onImageClick}
       />)
   }
 

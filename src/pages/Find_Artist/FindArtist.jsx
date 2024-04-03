@@ -13,7 +13,7 @@ export default function FindArtist(props) {
     <div className={FindArtistCSS['find-artist-container']}>
       <BackButton onImageClick={props.onImageClick} />
       <Search foundArtist={foundArtist} setFoundArtist={setFoundArtist} mode={props.mode} />
-      <ExistingFavArtists foundArtist={foundArtist} mode={props.mode} switchPages={props.switchPages} />
+      <ExistingFavArtists foundArtist={foundArtist} mode={props.mode} onImageClick={props.onImageClick} />
     </div>
   )
 }
