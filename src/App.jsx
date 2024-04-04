@@ -3,7 +3,7 @@ import FindArtist from "./pages/Find_Artist/FindArtist.jsx"
 import ArtistProfile from "./pages/Artist_Profile/ArtistProfile.jsx"
 import DisplayMode from "./pages/Display_Mode/DisplayMode.jsx"
 import ArtGallery from "./pages/Art_Gallery/ArtGallery.jsx"
-import ArtistProfileSearch from "./pages/Artist_Profile_Search/ArtistProfileSearch.jsx"
+
 
 
 export default function App() {
@@ -16,14 +16,14 @@ export default function App() {
   const [currentImageIndex, setCurrentImageIndex] = React.useState(parseInt(localStorage.getItem('currentImageIndex')) ?? 3)
   // DATA FOR ARTISTS PROFILE
   const [artistsData, setArtistsData] = React.useState([])
-  const [artistSearchData, setArtistSearchData] = React.useState([])
+  const [artistSearchData, setArtistSearchData] = React.useState()
   
   const [mode, setMode] = React.useState(() => {
     const localMode = localStorage.getItem('mode')
     return localMode === null ? true : JSON.parse(localMode)
   })
 
-
+  
   function getImageIndex(index) {
     setCurrentImageIndex(index)
     localStorage.setItem('currentImageIndex', index)
@@ -48,16 +48,12 @@ export default function App() {
           <ArtistProfile artistsData={artistsData} 
                          setArtistsData={setArtistsData} 
                          onImageClick={switchPages} 
-                         getImageIndex={getImageIndex} />
+                         getImageIndex={getImageIndex} 
+                         artistSearchData={artistSearchData} />
           ) : switchComponent === 3 ? (
-            <FindArtist onImageClick={switchPages}
-                        mode={mode}  
-                        />
-          ) : switchComponent === 4 ? (
-            <ArtistProfileSearch artistsData={artistsData} 
-                         setArtistsData={setArtistsData} 
-                         onImageClick={switchPages} 
-                         getImageIndex={getImageIndex} />
+          <FindArtist onImageClick={switchPages}
+                      mode={mode}  
+                      setArtistSearchData={setArtistSearchData} />
           ) : null }
       <DisplayMode mode={mode} setMode={setMode} />
     </div>
