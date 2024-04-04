@@ -10,6 +10,7 @@ export default function Artworks(props) {
              getImageIndex={props.getImageIndex} 
              index={index} /> 
   )
+  
 
   return (
     <div className={ArtworksCSS['artworks-container']}>

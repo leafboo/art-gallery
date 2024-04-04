@@ -5,21 +5,25 @@ import Artworks from "./Artworks/Artworks.jsx"
 import BackButton from "../Find_Artist/Back_Button/BackButton.jsx"
 
 export default function ArtistProfile(props) {
+  const { pageNumber } = props
+  const artistData = pageNumber === 2 ? props.artistsData : pageNumber === 4 ? props.unaddedArtistData : null
+
+  console.log(props.unaddedArtistName)
   React.useEffect(() => {
     async function fetchData() {
-        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${props.artistSearchData ? props.artistSearchData : 'ciloranko'}`)
+        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${props.unaddedArtistName ? props.unaddedArtistName : 'ciloranko'}`)
         const data = await response.json()
-        props.setArtistsData(data)
+        props.unaddedArtistName ? props.setUnaddedArtistData(data) : props.setArtistsData(data)
     }
     fetchData()
   }, [])
-
+  
   return (
     <div className={ArtistProfileCSS['artist-profile-container']}>
       <div className={ArtistProfileCSS['inner-container']}>
-        { props.artistSearchData && <BackButton BackButtonValue={3} onImageClick={props.onImageClick} /> }
-        <Details artistsData={props.artistsData}/>
-        <Artworks artistsData={props.artistsData} 
+        { props.unaddedArtistName && <BackButton BackButtonValue={3} onImageClick={props.onImageClick} /> }
+        <Details artistsData={artistData}/>
+        <Artworks artistsData={artistData} 
                   onImageClick={props.onImageClick} 
                   getImageIndex={props.getImageIndex} />
       </div>

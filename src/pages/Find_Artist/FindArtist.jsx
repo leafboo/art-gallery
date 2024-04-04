@@ -18,7 +18,7 @@ export default function FindArtist(props) {
       <ExistingFavArtists foundArtist={foundArtist} 
                           mode={props.mode}
                           onImageClick={props.onImageClick}
-                          setArtistSearchData={props.setArtistSearchData} />
+                          setUnaddedArtistName={props.setUnaddedArtistName} />
     </div>
   )
 }

@@ -13,7 +13,7 @@ export default function ExistingFavArtists(props) {
               name={artist.name}
               mode={props.mode}
               onImageClick={props.onImageClick}
-              setArtistSearchData={props.setArtistSearchData}
+              setUnaddedArtistName={props.setUnaddedArtistName}
       />)
   }
 
