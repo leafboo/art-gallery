@@ -11,9 +11,17 @@ export default function ArtistProfile(props) {
   console.log(props.unaddedArtistName)
   React.useEffect(() => {
     async function fetchData() {
-        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${props.unaddedArtistName ? props.unaddedArtistName : 'ciloranko'}`)
+        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${pageNumber === 4 ? props.unaddedArtistName : 'ciloranko'}`)
         const data = await response.json()
-        props.unaddedArtistName ? props.setUnaddedArtistData(data) : props.setArtistsData(data)
+        pageNumber === 4 ? props.setUnaddedArtistData(data) : props.setArtistsData(data)
+        if (props.unaddedArtistData) {
+          props.setUnaddedArtistData(data)
+          localStorage.setItem('unaddedArtistData', JSON.stringify(data))
+        } else {
+          props.setArtistData(data)
+          localStorage.setItem('artistData', JSON.stringify(data))
+
+        }
     }
     fetchData()
   }, [])
@@ -21,7 +29,7 @@ export default function ArtistProfile(props) {
   return (
     <div className={ArtistProfileCSS['artist-profile-container']}>
       <div className={ArtistProfileCSS['inner-container']}>
-        { props.unaddedArtistName && <BackButton BackButtonValue={3} onImageClick={props.onImageClick} /> }
+        { localStorage.getItem('unaddedArtistData') && <BackButton BackButtonValue={3} onImageClick={props.onImageClick} /> }
         <Details artistsData={artistData}/>
         <Artworks artistsData={artistData} 
                   onImageClick={props.onImageClick} 

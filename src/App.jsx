@@ -15,17 +15,17 @@ export default function App() {
   // save image index of clicked image to display in art gallery
   const [currentImageIndex, setCurrentImageIndex] = React.useState(parseInt(localStorage.getItem('currentImageIndex')) ?? 3)
   // DATA FOR ARTISTS PROFILE
-  const [artistsData, setArtistsData] = React.useState([])
-  const [unaddedArtistName, setUnaddedArtistName] = React.useState('')
-  const [unaddedArtistData, setUnaddedArtistData] = React.useState([])
+  const [artistData, setArtistData] = React.useState([])
+  const [unaddedArtistName, setUnaddedArtistName] = React.useState(localStorage.getItem('unaddedArtistName') ? localStorage.getItem('unaddedArtistName') : '')
+  const [unaddedArtistData, setUnaddedArtistData] = React.useState(localStorage.getItem('unaddedArtistData') ? JSON.parse(localStorage.getItem('unaddedArtistData')) : [])
   
   const [mode, setMode] = React.useState(() => {
     const localMode = localStorage.getItem('mode')
     return localMode === null ? true : JSON.parse(localMode)
   })
 
-  
-  
+  //switchPages(1)
+
   function getImageIndex(index) {
     setCurrentImageIndex(index)
     localStorage.setItem('currentImageIndex', index)
@@ -42,13 +42,13 @@ export default function App() {
     <div>
       { switchComponent === 1 ? (
           <ArtGallery onImageClick={switchPages} 
-                      artistsData={artistsData} 
-                      setArtistsData={setArtistsData} 
+                      artistsData={artistData} 
+                      setArtistsData={setArtistData} 
                       currentImageIndex={currentImageIndex}
                       setCurrentImageIndex={setCurrentImageIndex} />
           ) : switchComponent === 2 ? (
-          <ArtistProfile artistsData={artistsData} 
-                         setArtistsData={setArtistsData} 
+          <ArtistProfile artistsData={artistData} 
+                         setArtistsData={setArtistData} 
                          onImageClick={switchPages} 
                          getImageIndex={getImageIndex}
                          pageNumber={switchComponent} />
