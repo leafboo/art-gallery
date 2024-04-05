@@ -37,7 +37,7 @@ export default function ArtistProfile(props) {
   return (
     <div className={ArtistProfileCSS['artist-profile-container']}>
       <div className={ArtistProfileCSS['inner-container']}>
-        { localStorage.getItem('unaddedArtistData') && <BackButton BackButtonValue={3} onImageClick={props.onImageClick} /> }
+        { props.pageNumber === 4 && <BackButton BackButtonValue={3} onImageClick={props.onImageClick} /> }
         <Details artistsData={artistData}/>
         <Artworks artistsData={artistData} 
                   onImageClick={props.onImageClick} 
