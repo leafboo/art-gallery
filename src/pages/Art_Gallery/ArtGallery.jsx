@@ -4,12 +4,17 @@ import ArtGalleryCSS from "./ArtGallery.module.css"
 
 export default function ArtGallery(props) {
   React.useEffect(() => {
-    async function fetchData() {
+    try {
+      async function fetchData() {
         const response = await fetch("https://danbooru.donmai.us/posts.json?tags=ciloranko")
         const data = await response.json()
         props.setArtistsData(data)
+      }
+      fetchData()
+    } catch(err) {
+      console.error(err)
     }
-    fetchData()
+    
   }, [])
   
   return (
