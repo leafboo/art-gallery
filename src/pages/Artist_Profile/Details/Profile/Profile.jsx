@@ -1,5 +1,6 @@
 import React from "react"
-import ProfileCSS from "./styles/Profile.module.css"
+import ProfileCSS from "./Profile.module.css"
+import FavoriteToggleButton from "./Favorite_Toggle_Button/FavoriteToggleButton"
 
 export default function Profile(props) {
   return (
@@ -9,7 +10,9 @@ export default function Profile(props) {
       </div>
       <div className={ProfileCSS['name-container']}>
         <div className={ProfileCSS['name']}>{props.name}</div>
+        <FavoriteToggleButton />
       </div>
+      
       
     </div>
     

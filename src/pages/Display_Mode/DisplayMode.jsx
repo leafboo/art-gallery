@@ -14,6 +14,7 @@ export default function DisplayMode(props) {
   React.useLayoutEffect(() => {
     document.body.style.backgroundColor = props.mode ? 'white' : 'black'
     document.body.style.color = props.mode ? 'black' : 'rgb(222, 222, 222)'
+    document.body.style.borderColor = props.mode ? 'black' : 'rgb(222, 222, 222)'
   });
 
   return (

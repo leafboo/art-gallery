@@ -1,0 +1,17 @@
+.favorite-toggle-button-container {
+  display: flex;
+  padding: .3rem;
+  position: absolute;
+  top: 8.2rem;
+  font-family: Inria Sans;
+  font-weight: 700;
+  font-size: 1rem;
+  border: solid 1px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.favorite-toggle-button-container:hover {
+  color: rgb(14, 119, 14);
+  border-color: rgb(14, 119, 14);
+}

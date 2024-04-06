@@ -1,7 +1,7 @@
 import React from "react" 
-import DetailsCSS from "./styles/Details.module.css"
-import Profile from "./Profile.jsx"
-import Socials from "./Socials.jsx"
+import DetailsCSS from "./Details.module.css"
+import Profile from "./Profile/Profile.jsx"
+import Socials from "./Socials/Socials.jsx"
 
 export default function Details(props) {
   const [name, setName] = React.useState(null);
