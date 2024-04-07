@@ -5,7 +5,7 @@ import ArtistsHeader from "./ArtistsHeader/ArtistsHeader"
 import ImageNavigator from "./Image_Navigator/ImageNavigator"
 
 export default function ArtworksSlideshow(props) {
-  const artworks = props.artistsData.map(data => data.media_asset.variants[4].url)
+  const artworks = props.artistsData.map(data => data.file_url)
   const displayImage = artworks[props.currentImageIndex]
   
   

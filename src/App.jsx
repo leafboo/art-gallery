@@ -18,7 +18,10 @@ export default function App() {
   const [artistData, setArtistData] = React.useState([])
   const [unaddedArtistName, setUnaddedArtistName] = React.useState(localStorage.getItem('unaddedArtistName') ? localStorage.getItem('unaddedArtistName') : '')
   const [unaddedArtistData, setUnaddedArtistData] = React.useState(localStorage.getItem('unaddedArtistData') ? JSON.parse(localStorage.getItem('unaddedArtistData')) : [])
+  const [favoriteArtists, setFavoriteArtists] = React.useState([])
   
+  console.log(artistData)
+
   const [mode, setMode] = React.useState(() => {
     const localMode = localStorage.getItem('mode')
     return localMode === null ? true : JSON.parse(localMode)
