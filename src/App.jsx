@@ -18,9 +18,18 @@ export default function App() {
   const [artistData, setArtistData] = React.useState([])
   const [unaddedArtistName, setUnaddedArtistName] = React.useState(localStorage.getItem('unaddedArtistName') ? localStorage.getItem('unaddedArtistName') : '')
   const [unaddedArtistData, setUnaddedArtistData] = React.useState(localStorage.getItem('unaddedArtistData') ? JSON.parse(localStorage.getItem('unaddedArtistData')) : [])
-  const [favoriteArtists, setFavoriteArtists] = React.useState([])
-  
-  console.log(artistData)
+  const [favoriteArtists, setFavoriteArtists] = React.useState([{
+                                                                  name: 'yoneyama_mai',
+                                                                  profile_picture: 'https://pbs.twimg.com/profile_images/1155680462464942081/JBCvjutU_400x400.jpg'
+                                                                }, {
+                                                                  name: 'ciloranko',
+                                                                  profile_picture: 'https://pbs.twimg.com/profile_images/1564831789625257984/W4F7yvkP_400x400.jpg'
+                                                                }, {
+                                                                  name: 'rella',
+                                                                  profile_picture: 'https://pbs.twimg.com/profile_images/1466177220905295878/iwAMQRAw_400x400.jpg'
+                                                                }])
+  const [selectedArtist, setSelectedArtist] = React.useState(localStorage.getItem('selectedArtist') ?? 'ciloranko')
+  console.log(selectedArtist)
 
   const [mode, setMode] = React.useState(() => {
     const localMode = localStorage.getItem('mode')
@@ -44,13 +53,16 @@ export default function App() {
   return (
     <div>
       { switchComponent === 1 ? (
-          <ArtGallery onImageClick={switchPages} 
+          <ArtGallery setSelectedArtist={setSelectedArtist}
+                      onImageClick={switchPages} 
                       artistsData={artistData} 
                       setArtistsData={setArtistData} 
                       currentImageIndex={currentImageIndex}
-                      setCurrentImageIndex={setCurrentImageIndex} />
+                      setCurrentImageIndex={setCurrentImageIndex}
+                      favoriteArtists={favoriteArtists} />
           ) : switchComponent === 2 ? (
-          <ArtistProfile artistsData={artistData} 
+          <ArtistProfile selectedArtist={selectedArtist}
+                         artistsData={artistData} 
                          setArtistsData={setArtistData} 
                          onImageClick={switchPages} 
                          getImageIndex={getImageIndex}

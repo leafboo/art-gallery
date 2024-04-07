@@ -4,7 +4,7 @@ import ArtistBlobCSS from "./ArtistBlob.module.css"
 export default function ArtistBlob(props) {
   return (
     <div className={'artist-blob-container'}>
-      <img src={props.picture} alt="Profile picture." className={ArtistBlobCSS['profile-picture']} />
+      <img src={props.picture} alt="Profile picture." className={ArtistBlobCSS['profile-picture']} onClick={props.changeArtist} />
     </div>
   )
 } 

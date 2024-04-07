@@ -26,7 +26,9 @@ export default function ArtworksSlideshow(props) {
   return (
     <div className={ArtworksSlideshowCSS['artworks-slideshow-container']}>
       <ImageNavigator changeImageIndex={changeImageIndex} />
-      <ArtistsHeader onImageClick={props.onImageClick} />
+      <ArtistsHeader onImageClick={props.onImageClick} 
+                     favoriteArtists={props.favoriteArtists}
+                     setSelectedArtist={props.setSelectedArtist} />
       <img src={displayImage} alt="Artwork." className={ArtworksSlideshowCSS['artwork']} />
       <MiniBoxProfile onImageClick={props.onImageClick} />
     </div>
