@@ -54,6 +54,7 @@ export default function App() {
     <div>
       { switchComponent === 1 ? (
           <ArtGallery setSelectedArtist={setSelectedArtist}
+                      selectedArtist={selectedArtist}
                       onImageClick={switchPages} 
                       artistsData={artistData} 
                       setArtistsData={setArtistData} 

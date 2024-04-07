@@ -6,7 +6,7 @@ export default function ArtGallery(props) {
   React.useEffect(() => {
     try {
       async function fetchData() {
-        const response = await fetch("https://danbooru.donmai.us/posts.json?tags=ciloranko")
+        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${props.selectedArtist}`)
         const data = await response.json()
         props.setArtistsData(data)
       }

@@ -13,7 +13,7 @@ export default function ArtistProfile(props) {
   React.useEffect(() => {
     try {
       async function fetchData() {
-        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${pageNumber === 4 ? props.unaddedArtistName : 'ciloranko'}`)
+        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${pageNumber === 4 ? props.unaddedArtistName : props.selectedArtist}`)
         const data = await response.json()
         pageNumber === 4 ? props.setUnaddedArtistData(data) : props.setArtistsData(data)
 
