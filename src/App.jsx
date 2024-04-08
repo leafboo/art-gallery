@@ -30,6 +30,7 @@ export default function App() {
                                                                 }])
   const [selectedArtist, setSelectedArtist] = React.useState(localStorage.getItem('selectedArtist') ?? 'ciloranko')
   console.log(selectedArtist)
+  console.log(artistData)
 
   const [mode, setMode] = React.useState(() => {
     const localMode = localStorage.getItem('mode')

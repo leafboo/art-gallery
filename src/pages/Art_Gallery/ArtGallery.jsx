@@ -15,7 +15,7 @@ export default function ArtGallery(props) {
       console.error(err)
     }
     
-  }, [])
+  }, [props.selectedArtist])
   
   return (
     <div className={ArtGalleryCSS['art-gallery-container']}>
