@@ -37,6 +37,21 @@ export default function App() {
     return localMode === null ? true : JSON.parse(localMode)
   })
 
+
+  React.useEffect(() => {
+    try {
+      async function fetchData() {
+        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${selectedArtist}`)
+        const data = await response.json()
+        setArtistData(data)
+      }
+      fetchData()
+    } catch(err) {
+      console.error(err)
+    }
+    
+  }, [selectedArtist])
+
   //switchPages(1)
 
   function getImageIndex(index) {
@@ -58,7 +73,6 @@ export default function App() {
                       selectedArtist={selectedArtist}
                       onImageClick={switchPages} 
                       artistsData={artistData} 
-                      setArtistsData={setArtistData} 
                       currentImageIndex={currentImageIndex}
                       setCurrentImageIndex={setCurrentImageIndex}
                       favoriteArtists={favoriteArtists} />
