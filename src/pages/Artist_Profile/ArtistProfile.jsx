@@ -11,27 +11,21 @@ export default function ArtistProfile(props) {
   // localStorage.setItem('unaddedArtistData', []) !!!!! USE THIS WHEN EXPERIENCING BUG !!!!!
 
   React.useEffect(() => {
-    try {
-      async function fetchData() {
-        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${pageNumber === 4 ? props.unaddedArtistName : props.selectedArtist}`)
-        const data = await response.json()
-        pageNumber === 4 ? props.setUnaddedArtistData(data) : props.setArtistsData(data)
-
-        if (pageNumber === 4) {
+    if (pageNumber === 4) {
+      try {
+        async function fetchData() {
+          const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${props.unaddedArtistName}`)
+          const data = await response.json()
+  
           props.setUnaddedArtistData(data)
           localStorage.setItem('unaddedArtistData', JSON.stringify(data))
-        } else {
-          props.setArtistsData(data)
-          localStorage.setItem('artistData', JSON.stringify(data))
-
+          
         }
+        fetchData()
+      } catch(err) {
+        console.error(err)
       }
-      fetchData()
-    } catch(err) {
-      console.error(err)
     }
-    
-
   }, [])
   
   return (
