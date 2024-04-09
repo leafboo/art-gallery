@@ -4,7 +4,7 @@ import MiniBoxProfileCSS from "./MiniBoxProfile.module.css"
 export default function MiniBoxProfile(props) {
   return (
     <div className={MiniBoxProfileCSS['mini-box-profile-container']}>
-      <img src="https://pbs.twimg.com/profile_images/1564831789625257984/W4F7yvkP_400x400.jpg" 
+      <img src={props.selectedArtist.profile_picture} 
            alt="Profile picture." 
            className={MiniBoxProfileCSS['profile-picture']} 
            onClick={() => { props.onImageClick(2) }} />
