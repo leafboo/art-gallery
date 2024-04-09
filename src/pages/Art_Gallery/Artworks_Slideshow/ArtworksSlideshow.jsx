@@ -31,7 +31,8 @@ export default function ArtworksSlideshow(props) {
                      favoriteArtists={props.favoriteArtists}
                      setSelectedArtist={props.setSelectedArtist} />
       <img src={displayImage} alt="Artwork." className={ArtworksSlideshowCSS['artwork']} />
-      <MiniBoxProfile onImageClick={props.onImageClick} />
+      <MiniBoxProfile onImageClick={props.onImageClick}
+                      selectedArtist={props.selectedArtist} />
     </div>
   )
 }

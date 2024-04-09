@@ -9,7 +9,7 @@ export default function MiniBoxProfile(props) {
            className={MiniBoxProfileCSS['profile-picture']} 
            onClick={() => { props.onImageClick(2) }} />
            
-      <span className={MiniBoxProfileCSS['name']}>TrNyteal</span>
+      <span className={MiniBoxProfileCSS['name']}>{props.selectedArtist}</span>
     </div>
   )
 }
