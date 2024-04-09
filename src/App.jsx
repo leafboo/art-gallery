@@ -77,8 +77,7 @@ export default function App() {
                       setCurrentImageIndex={setCurrentImageIndex}
                       favoriteArtists={favoriteArtists} />
           ) : switchComponent === 2 ? (
-          <ArtistProfile selectedArtist={selectedArtist}
-                         artistsData={artistData} 
+          <ArtistProfile artistsData={artistData} 
                          setArtistsData={setArtistData} 
                          onImageClick={switchPages} 
                          getImageIndex={getImageIndex}
