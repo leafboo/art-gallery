@@ -28,7 +28,9 @@ export default function App() {
                                                                   name: 'rella',
                                                                   profile_picture: 'https://pbs.twimg.com/profile_images/1466177220905295878/iwAMQRAw_400x400.jpg'
                                                                 }])
-  const [selectedArtist, setSelectedArtist] = React.useState(localStorage.getItem('selectedArtist') ?? 'ciloranko')
+  const [selectedArtist, setSelectedArtist] = React.useState(JSON.parse(localStorage.getItem('selectedArtist')) ?? ({ name: 'ciloranko', 
+                                                                                                          profile_picture: 'https://pbs.twimg.com/profile_images/1564831789625257984/W4F7yvkP_400x400.jpg' 
+                                                                                                        }))
   console.log(selectedArtist)
   console.log(artistData)
 
@@ -41,7 +43,7 @@ export default function App() {
   React.useEffect(() => {
     try {
       async function fetchData() {
-        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${selectedArtist}`)
+        const response = await fetch(`https://danbooru.donmai.us/posts.json?tags=${selectedArtist.name}`)
         const data = await response.json()
         setArtistData(data)
       }
@@ -50,7 +52,7 @@ export default function App() {
       console.error(err)
     }
     
-  }, [selectedArtist])
+  }, [selectedArtist.name])
 
   //switchPages(1)
 

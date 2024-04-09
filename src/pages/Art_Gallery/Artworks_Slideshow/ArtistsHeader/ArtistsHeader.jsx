@@ -6,10 +6,11 @@ import PlusButton from "./Plus_Button/PlusButton.jsx"
 export default function ArtistsHeader(props) {
   const artists = props.favoriteArtists.map(({ name, profile_picture }) => 
     <ArtistBlob picture={profile_picture}
-                opacity={props.selectedArtist === name ? 1 : 0.45}
+                opacity={props.selectedArtist.name === name ? 1 : 0.45}
                 changeArtist={() => { 
-                                      props.setSelectedArtist(name)
-                                      localStorage.setItem('selectedArtist', name)
+                                      const obj = {name: name, profile_picture: profile_picture}
+                                      props.setSelectedArtist(obj)
+                                      localStorage.setItem('selectedArtist', JSON.stringify(obj))
                                     }} />
   )
 
