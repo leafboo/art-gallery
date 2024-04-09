@@ -5,7 +5,8 @@ import ArtGalleryCSS from "./ArtGallery.module.css"
 export default function ArtGallery(props) {
   return (
     <div className={ArtGalleryCSS['art-gallery-container']}>
-      <ArtworksSlideshow setSelectedArtist={props.setSelectedArtist}
+      <ArtworksSlideshow selectedArtist={props.selectedArtist}
+                         setSelectedArtist={props.setSelectedArtist}
                          onImageClick={props.onImageClick} 
                          artistsData={props.artistsData} 
                          currentImageIndex={props.currentImageIndex} 
