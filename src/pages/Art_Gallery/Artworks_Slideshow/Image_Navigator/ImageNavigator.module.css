@@ -4,18 +4,24 @@
   justify-content: space-between;
   width: 100vw;
 }
-.arrow-button {
+
+
+.arrow-button-light, .arrow-button-dark {
   height: 100vh;
   width: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.15s, opacity 0.15s;
   opacity: 0;
+  transition: background-color 0.15s, opacity 0.15s;
 }
-.arrow-button:hover {
+.arrow-button-light:hover {
   background-color: rgb(210, 210, 210);
+  opacity: 1;
+}
+.arrow-button-dark:hover {
+  background-color: rgb(34, 34, 34);
   opacity: 1;
 }
 .arrow {

@@ -11,7 +11,8 @@ export default function ArtGallery(props) {
                          artistsData={props.artistsData} 
                          currentImageIndex={props.currentImageIndex} 
                          setCurrentImageIndex={props.setCurrentImageIndex}
-                         favoriteArtists={props.favoriteArtists} />
+                         favoriteArtists={props.favoriteArtists}
+                         mode={props.mode} />
     </div>
   )
 }

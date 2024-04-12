@@ -5,14 +5,18 @@ import rightArrowBlack from "../../../../assets/rightArrowBlack.png"
 import leftArrowWhite from "../../../../assets/leftArrowWhite.png"
 import rightArrowWhite from "../../../../assets/rightArrowWhite.png"
 
+
 export default function ImageNavigator(props) {
+
+  const arrowButton = props.mode ? 'arrow-button-light' : 'arrow-button-dark'
+
   return (
     <div className={ImageNavigatorCSS['image-navigator-container']}>
-      <div className={ImageNavigatorCSS['arrow-button']} onClick={() => {props.changeImageIndex(2)}} >
-        <img src={leftArrowBlack} alt="Left Arrow." className={ImageNavigatorCSS['arrow']} />
+      <div className={ImageNavigatorCSS[`${arrowButton}`]} onClick={() => {props.changeImageIndex(2)}} >
+        <img src={props.mode ? leftArrowBlack : leftArrowWhite} alt="Left Arrow." className={ImageNavigatorCSS['arrow']} />
       </div>
-      <div className={ImageNavigatorCSS['arrow-button']} onClick={() => {props.changeImageIndex(1)}} >
-        <img src={rightArrowBlack} alt="Right Arrow." className={ImageNavigatorCSS['arrow']} />
+      <div className={ImageNavigatorCSS[`${arrowButton}`]} onClick={() => {props.changeImageIndex(1)}} >
+        <img src={props.mode ? rightArrowBlack : rightArrowWhite} alt="Right Arrow." className={ImageNavigatorCSS['arrow']} />
       </div>
     </div>
   )

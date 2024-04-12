@@ -77,7 +77,8 @@ export default function App() {
                       artistsData={artistData} 
                       currentImageIndex={currentImageIndex}
                       setCurrentImageIndex={setCurrentImageIndex}
-                      favoriteArtists={favoriteArtists} />
+                      favoriteArtists={favoriteArtists}
+                      mode={mode} />
           ) : switchComponent === 2 ? (
           <ArtistProfile artistsData={artistData} 
                          setArtistsData={setArtistData} 
