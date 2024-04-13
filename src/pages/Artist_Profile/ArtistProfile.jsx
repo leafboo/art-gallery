@@ -32,7 +32,9 @@ export default function ArtistProfile(props) {
     <div className={ArtistProfileCSS['artist-profile-container']}>
       <div className={ArtistProfileCSS['inner-container']}>
         { props.pageNumber === 4 && <BackButton BackButtonValue={3} onImageClick={props.onImageClick} /> }
-        <Details artistsData={artistData}/>
+        <Details artistsData={artistData}
+                 selectedArtist={pageNumber !== 4 ? props.selectedArtist : null}
+                 mode={props.mode} />
         <Artworks artistsData={artistData}
                   onImageClick={pageNumber !== 4 ? props.onImageClick : null} 
                   getImageIndex={props.getImageIndex} />

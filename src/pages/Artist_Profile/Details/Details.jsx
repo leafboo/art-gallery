@@ -2,9 +2,12 @@ import React from "react"
 import DetailsCSS from "./Details.module.css"
 import Profile from "./Profile/Profile.jsx"
 import Socials from "./Socials/Socials.jsx"
+import defaultProfileDark from "../../../assets/defaultProfileDark.png"
+import defaultProfileWhite from "../../../assets/defaultProfileLight.png"
 
 export default function Details(props) {
   const [name, setName] = React.useState(null);
+  const defaultProfile = props.mode ? defaultProfileDark : defaultProfileWhite
 
   React.useEffect(() => {
     // Check if artistsData exists and has at least one item
@@ -14,10 +17,11 @@ export default function Details(props) {
     }
   }, [props.artistsData]); // Re-run effect whenever artistsData changes
 
+
   return (
     <div className={DetailsCSS['details-container']}>
-      <Profile profilePicture="https://pbs.twimg.com/profile_images/1564831789625257984/W4F7yvkP_400x400.jpg"
-               name={name}/>
+      <Profile profilePicture={props.selectedArtist ? props.selectedArtist.profile_picture : defaultProfile}
+               name={name} />
       <Socials />
     </div>
     

@@ -84,7 +84,8 @@ export default function App() {
                          setArtistsData={setArtistData} 
                          onImageClick={switchPages} 
                          getImageIndex={getImageIndex}
-                         pageNumber={switchComponent} />
+                         pageNumber={switchComponent}
+                         selectedArtist={selectedArtist} />
           ) : switchComponent === 3 ? (
           <FindArtist onImageClick={switchPages}
                       mode={mode}  
@@ -94,7 +95,8 @@ export default function App() {
                            setUnaddedArtistData={setUnaddedArtistData} 
                            unaddedArtistData={unaddedArtistData}
                            pageNumber={switchComponent}
-                           onImageClick={switchPages} />
+                           onImageClick={switchPages}
+                           mode={mode} />
           ) : null }
       <DisplayMode mode={mode} setMode={setMode} />
     </div>
