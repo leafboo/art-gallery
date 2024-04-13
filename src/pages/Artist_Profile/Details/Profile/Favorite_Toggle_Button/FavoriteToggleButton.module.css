@@ -1,6 +1,6 @@
 
 
-.favorite-toggle-button {
+.favorite-toggle-button, .cancel-button {
   padding: .3rem;
   position: absolute;
   top: 8.2rem;
@@ -12,16 +12,25 @@
 }
 
 .favorite-toggle-button:hover {
-  color: rgb(14, 119, 14);
-  border-color: rgb(14, 119, 14);
+  color: rgb(19, 141, 19);
+  border-color:  rgb(19, 141, 19);
 }
+
+.cancel-button {
+  left: 3.7rem;
+}
+.cancel-button:hover {
+  color: rgb(207, 33, 33);
+  border-color: rgb(207, 33, 33);
+}
+
 .input-url {
   background-color: transparent;
   border: solid 1px;
   font-family: Inria Sans;
   position: absolute;
   top: 8.2rem;
-  left: 4rem;
+  left: 9rem;
   padding: .3rem;
   font-size: 1rem;
   width: 20rem;

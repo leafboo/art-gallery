@@ -10,10 +10,13 @@ export default function FavoriteToggleButton(props) {
       <div className={FavoriteToggleButtonCSS['favorite-toggle-button']} onClick={() => {setMessagePrompt('Enter')}}>
         {messagePrompt}
       </div>
-      { messagePrompt === 'Enter' && <input type="text" 
-                                             placeholder="Enter profile picture URL here" 
-                                             className={`${FavoriteToggleButtonCSS['input-url']} ${props.mode ? FavoriteToggleButtonCSS['dark'] : FavoriteToggleButtonCSS['light']}`} /> 
-      } 
+      { messagePrompt === 'Enter' && (<>
+                                        <div className={FavoriteToggleButtonCSS['cancel-button']} onClick={() => {setMessagePrompt('Add to favorites')}}>
+                                          Cancel
+                                        </div>
+                                        <input type="text" placeholder="Enter profile picture URL here" className={`${FavoriteToggleButtonCSS['input-url']} ${props.mode ? FavoriteToggleButtonCSS['dark'] : FavoriteToggleButtonCSS['light']}`} /> 
+                                      </>
+      )} 
       
     </div>
   )
