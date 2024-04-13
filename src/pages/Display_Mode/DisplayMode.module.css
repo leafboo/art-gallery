@@ -2,8 +2,8 @@
 .dark-mode-logo {
   width: 2rem;
   position: fixed;
-  bottom: .3rem;
-  right: .3rem;
+  bottom: .6rem;
+  right: .6rem;
   cursor: pointer;
   transition: transform 0.15s;
 }
@@ -16,8 +16,8 @@
 .light-mode-logo {
   width: 2rem;
   position: fixed;
-  bottom: .4rem;
-  right: .4rem;
+  bottom: .6rem;
+  right: .6rem;
   cursor: pointer;
   transition: transform 0.15s;
 }
