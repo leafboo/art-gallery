@@ -85,7 +85,8 @@ export default function App() {
                          onImageClick={switchPages} 
                          getImageIndex={getImageIndex}
                          pageNumber={switchComponent}
-                         selectedArtist={selectedArtist} />
+                         selectedArtist={selectedArtist}
+                         mode={mode} />
           ) : switchComponent === 3 ? (
           <FindArtist onImageClick={switchPages}
                       mode={mode}  

@@ -15,7 +15,7 @@ export default function DisplayMode(props) {
     document.body.style.backgroundColor = props.mode ? 'white' : 'black'
     document.body.style.color = props.mode ? 'black' : 'rgb(222, 222, 222)'
     document.body.style.borderColor = props.mode ? 'black' : 'rgb(222, 222, 222)'
-  });
+  },);
 
   return (
     <img  className={props.mode ? DisplayModeCSS['dark-mode-logo'] : DisplayModeCSS['light-mode-logo']} 

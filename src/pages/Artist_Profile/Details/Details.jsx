@@ -21,7 +21,8 @@ export default function Details(props) {
   return (
     <div className={DetailsCSS['details-container']}>
       <Profile profilePicture={props.selectedArtist ? props.selectedArtist.profile_picture : defaultProfile}
-               name={name} />
+               name={name}
+               mode={props.mode} />
       <Socials />
     </div>
     
