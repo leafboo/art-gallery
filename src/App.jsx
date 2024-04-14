@@ -14,7 +14,6 @@ export default function App() {
   })
   // save image index of clicked image to display in art gallery
   const [currentImageIndex, setCurrentImageIndex] = React.useState(parseInt(localStorage.getItem('currentImageIndex')) ?? 3)
-  // DATA FOR ARTISTS PROFILE
   const [artistData, setArtistData] = React.useState([])
   const [unaddedArtistName, setUnaddedArtistName] = React.useState(localStorage.getItem('unaddedArtistName') ? localStorage.getItem('unaddedArtistName') : '')
   const [unaddedArtistData, setUnaddedArtistData] = React.useState(localStorage.getItem('unaddedArtistData') ? JSON.parse(localStorage.getItem('unaddedArtistData')) : [])
@@ -99,7 +98,8 @@ export default function App() {
                            pageNumber={switchComponent}
                            onImageClick={switchPages}
                            mode={mode}
-                           favoriteArtists={favoriteArtists} />
+                           favoriteArtists={favoriteArtists}
+                           setFavoriteArtists={setFavoriteArtists} />
           ) : null }
       <DisplayMode mode={mode} setMode={setMode} />
     </div>

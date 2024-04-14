@@ -41,3 +41,6 @@
 .light {
   color: rgb(222, 222, 222);
 }
+.light::placeholder {
+  color: rgb(43, 43, 43);
+}

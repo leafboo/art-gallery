@@ -23,7 +23,8 @@ export default function Details(props) {
       <Profile profilePicture={props.selectedArtist ? props.selectedArtist.profile_picture : defaultProfile}
                name={name}
                mode={props.mode}
-               favoriteArtists={props.favoriteArtists} />
+               favoriteArtists={props.favoriteArtists}
+               setFavoriteArtists={props.setFavoriteArtists} />
       <Socials />
     </div>
     

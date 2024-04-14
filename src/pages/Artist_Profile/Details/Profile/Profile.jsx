@@ -12,7 +12,8 @@ export default function Profile(props) {
         <div className={ProfileCSS['name']}>{props.name}</div>
         <FavoriteToggleButton mode={props.mode}
                               favoriteArtists={props.favoriteArtists}
-                              name={props.name} />
+                              name={props.name}
+                              setFavoriteArtists={props.setFavoriteArtists} />
       </div>
       
       
