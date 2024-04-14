@@ -11,18 +11,19 @@ export default function Details(props) {
 
   React.useEffect(() => {
     // Check if artistsData exists and has at least one item
-    if (props.artistsData && props.artistsData.length > 0) {
-      const artistName = props.artistsData[0].tag_string_artist;
+    if (props.artistData && props.artistData.length > 0) {
+      const artistName = props.artistData[0].tag_string_artist;
       setName(artistName); // Set the name once data is available
     }
-  }, [props.artistsData]); // Re-run effect whenever artistsData changes
+  }, [props.artistData]); // Re-run effect whenever artistsData changes
 
-
+  console.log(name)
   return (
     <div className={DetailsCSS['details-container']}>
       <Profile profilePicture={props.selectedArtist ? props.selectedArtist.profile_picture : defaultProfile}
                name={name}
-               mode={props.mode} />
+               mode={props.mode}
+               favoriteArtists={props.favoriteArtists} />
       <Socials />
     </div>
     

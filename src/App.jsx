@@ -86,7 +86,8 @@ export default function App() {
                          getImageIndex={getImageIndex}
                          pageNumber={switchComponent}
                          selectedArtist={selectedArtist}
-                         mode={mode} />
+                         mode={mode}
+                         favoriteArtists={favoriteArtists} />
           ) : switchComponent === 3 ? (
           <FindArtist onImageClick={switchPages}
                       mode={mode}  
@@ -97,7 +98,8 @@ export default function App() {
                            unaddedArtistData={unaddedArtistData}
                            pageNumber={switchComponent}
                            onImageClick={switchPages}
-                           mode={mode} />
+                           mode={mode}
+                           favoriteArtists={favoriteArtists} />
           ) : null }
       <DisplayMode mode={mode} setMode={setMode} />
     </div>
