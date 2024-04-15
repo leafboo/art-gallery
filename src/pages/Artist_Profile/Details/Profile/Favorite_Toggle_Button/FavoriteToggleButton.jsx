@@ -28,37 +28,39 @@ export default function FavoriteToggleButton(props) {
     props.onImageClick(1)
   }
 
-  console.log(isArtistAdded)
-  console.log(messagePrompt)
-  console.log(imageURL)
-  console.log(props.favoriteArtists)
+  function clickButton() {
+    if (!isArtistAdded) {
+      setMessagePrompt('Enter')
+    } else {
+      // remove artist from favorites
+    }
+
+    if ( messagePrompt === 'Enter' && imageURL) {
+      addToFavorites()
+    }
+  }
+
+  function renderCancelButtonAndInput() {
+    return (
+            <>
+              <div className={FavoriteToggleButtonCSS['cancel-button']} 
+                   onClick={() => { setMessagePrompt('Add to favorites'); setImageURL(undefined) }}>
+                Cancel
+              </div>
+              <input type="text" 
+                     placeholder="Enter profile picture URL here" 
+                     className={`${FavoriteToggleButtonCSS['input-url']} ${props.mode ? FavoriteToggleButtonCSS['dark'] : FavoriteToggleButtonCSS['light']}`} 
+                     onChange={handleChange} /> 
+            </>
+    )
+  }
 
   return (
     <div className={FavoriteToggleButtonCSS['favorite-toggle-button-container']}>
-      <div className={FavoriteToggleButtonCSS['favorite-toggle-button']} onClick={() => {
-        if (!isArtistAdded) {
-          setMessagePrompt('Enter')
-        } else {
-          // remove artist from favorites
-        }
-
-        if ( messagePrompt === 'Enter' && imageURL) {
-          addToFavorites()
-        }
-        
-      }}>
+      <div className={FavoriteToggleButtonCSS['favorite-toggle-button']} onClick={clickButton}>
         {messagePrompt}
       </div>
-      { messagePrompt === 'Enter' && (<>
-                                        <div className={FavoriteToggleButtonCSS['cancel-button']} onClick={() => {
-                                          setMessagePrompt('Add to favorites')
-                                          setImageURL(undefined)
-                                        }}>
-                                          Cancel
-                                        </div>
-                                        <input type="text" placeholder="Enter profile picture URL here" className={`${FavoriteToggleButtonCSS['input-url']} ${props.mode ? FavoriteToggleButtonCSS['dark'] : FavoriteToggleButtonCSS['light']}`} onChange={handleChange} /> 
-                                      </>
-      )} 
+      { messagePrompt === 'Enter' && renderCancelButtonAndInput()} 
       
     </div>
   )
