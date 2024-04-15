@@ -17,7 +17,8 @@ export default function App() {
   const [artistData, setArtistData] = React.useState([])
   const [unaddedArtistName, setUnaddedArtistName] = React.useState(localStorage.getItem('unaddedArtistName') ? localStorage.getItem('unaddedArtistName') : '')
   const [unaddedArtistData, setUnaddedArtistData] = React.useState(localStorage.getItem('unaddedArtistData') ? JSON.parse(localStorage.getItem('unaddedArtistData')) : [])
-  const [favoriteArtists, setFavoriteArtists] = React.useState([{
+  const [favoriteArtists, setFavoriteArtists] = React.useState( localStorage.getItem('favoriteArtists') ? JSON.parse(localStorage.getItem('favoriteArtists')) : 
+                                                                [{
                                                                   name: 'yoneyama_mai',
                                                                   profile_picture: 'https://pbs.twimg.com/profile_images/1155680462464942081/JBCvjutU_400x400.jpg'
                                                                 }, {
@@ -32,6 +33,7 @@ export default function App() {
                                                                                                         }))
   console.log(selectedArtist)
   console.log(artistData)
+  console.log(favoriteArtists)
 
   const [mode, setMode] = React.useState(() => {
     const localMode = localStorage.getItem('mode')
@@ -65,7 +67,7 @@ export default function App() {
     localStorage.setItem('switchComponent', num)
     console.log(num)
   }
-
+  //console.log(favoriteArtists[3].profile_picture)
 
   return (
     <div>

@@ -24,6 +24,7 @@ export default function Details(props) {
                name={name}
                mode={props.mode}
                favoriteArtists={props.favoriteArtists}
+               onImageClick={props.onImageClick}
                setFavoriteArtists={props.setFavoriteArtists} />
       <Socials />
     </div>

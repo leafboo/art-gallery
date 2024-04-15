@@ -21,10 +21,11 @@ export default function FavoriteToggleButton(props) {
   function addToFavorites() {
     const newArtist = {
       name: props.name,
-      profile_picure: imageURL
+      profile_picture: imageURL
     }
-
+    localStorage.setItem('favoriteArtists', JSON.stringify([...props.favoriteArtists, newArtist]))
     props.setFavoriteArtists([...props.favoriteArtists, newArtist])
+    props.onImageClick(1)
   }
 
   console.log(isArtistAdded)

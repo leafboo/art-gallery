@@ -36,6 +36,7 @@ export default function ArtistProfile(props) {
                  selectedArtist={pageNumber !== 4 ? props.selectedArtist : null}
                  mode={props.mode}
                  favoriteArtists={props.favoriteArtists}
+                 onImageClick={props.onImageClick}
                  setFavoriteArtists={props.setFavoriteArtists} />
         <Artworks artistsData={artistData}
                   onImageClick={pageNumber !== 4 ? props.onImageClick : null} 

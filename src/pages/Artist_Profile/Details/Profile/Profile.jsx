@@ -13,6 +13,7 @@ export default function Profile(props) {
         <FavoriteToggleButton mode={props.mode}
                               favoriteArtists={props.favoriteArtists}
                               name={props.name}
+                              onImageClick={props.onImageClick}
                               setFavoriteArtists={props.setFavoriteArtists} />
       </div>
       
