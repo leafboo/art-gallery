@@ -7,7 +7,7 @@ import BackButton from "../Find_Artist/Back_Button/BackButton.jsx"
 export default function ArtistProfile(props) {
   const { pageNumber } = props
   const artistData = pageNumber === 2 ? props.artistsData : pageNumber === 4 ? props.unaddedArtistData : null
-  console.log(artistData)
+ 
   // localStorage.setItem('unaddedArtistData', []) !!!!! USE THIS WHEN EXPERIENCING BUG !!!!!
 
   React.useEffect(() => {

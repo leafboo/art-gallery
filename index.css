@@ -3,5 +3,5 @@ html, body {
   padding: 0; 
   height: 100%;
   width: 100%;
-  transition: color 1.5s, background-color 1.5s;
+  transition: color 1.5s ease-out, background-color 1.5s ease-out;
 }

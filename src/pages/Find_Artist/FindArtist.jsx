@@ -7,8 +7,6 @@ import ExistingFavArtists from "./Existing_Fav_Artists/ExistingFavArtists.jsx"
 export default function FindArtist(props) {
   const [foundArtist, setFoundArtist] = React.useState(null)
 
-  console.log(foundArtist)
-
   return (
     <div className={FindArtistCSS['find-artist-container']}>
       <BackButton BackButtonValue={1} onImageClick={props.onImageClick} />

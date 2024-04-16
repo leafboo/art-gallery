@@ -3,7 +3,6 @@ import FavoriteToggleButtonCSS from "./FavoriteToggleButton.module.css"
 
 export default function FavoriteToggleButton(props) {
   const namesOfAddedArtists = props.favoriteArtists.map((artist) => artist.name)
-  console.log(namesOfAddedArtists)
   const isArtistAdded = namesOfAddedArtists.includes(props.name)
 
   const [messagePrompt, setMessagePrompt] = React.useState('')

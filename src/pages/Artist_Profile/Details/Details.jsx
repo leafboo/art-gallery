@@ -17,7 +17,6 @@ export default function Details(props) {
     }
   }, [props.artistData]); // Re-run effect whenever artistsData changes
 
-  console.log(name)
   return (
     <div className={DetailsCSS['details-container']}>
       <Profile profilePicture={props.selectedArtist ? props.selectedArtist.profile_picture : defaultProfile}

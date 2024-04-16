@@ -31,9 +31,6 @@ export default function App() {
   const [selectedArtist, setSelectedArtist] = React.useState(JSON.parse(localStorage.getItem('selectedArtist')) ?? ({ name: 'ciloranko', 
                                                                                                           profile_picture: 'https://pbs.twimg.com/profile_images/1564831789625257984/W4F7yvkP_400x400.jpg' 
                                                                                                         }))
-  console.log(selectedArtist)
-  console.log(artistData)
-  console.log(favoriteArtists)
 
   const [mode, setMode] = React.useState(() => {
     const localMode = localStorage.getItem('mode')
@@ -65,9 +62,7 @@ export default function App() {
   function switchPages(num) {
     setSwitchComponent(num)
     localStorage.setItem('switchComponent', num)
-    console.log(num)
   }
-  //console.log(favoriteArtists[3].profile_picture)
 
   return (
     <div>
