@@ -27,12 +27,21 @@ export default function FavoriteToggleButton(props) {
     props.setFavoriteArtists([...props.favoriteArtists, newArtist])
     props.onImageClick(1)
   }
+  
+  function removeFromFavorites() {
+    const newFavoriteArtists = props.favoriteArtists.filter((artist) => props.name !== artist.name)
+    localStorage.setItem('favoriteArtists', JSON.stringify(newFavoriteArtists))
+    props.setFavoriteArtists(newFavoriteArtists)
+    localStorage.setItem('selectedArtist', JSON.stringify(newFavoriteArtists[0]))
+    props.setSelectedArtist(newFavoriteArtists[0])
+    props.onImageClick(1)
+  }
 
   function clickButton() {
     if (!isArtistAdded) {
       setMessagePrompt('Enter')
     } else {
-      // remove artist from favorites
+      removeFromFavorites()
     }
 
     if ( messagePrompt === 'Enter' && imageURL) {
@@ -57,7 +66,7 @@ export default function FavoriteToggleButton(props) {
 
   return (
     <div className={FavoriteToggleButtonCSS['favorite-toggle-button-container']}>
-      <div className={FavoriteToggleButtonCSS['favorite-toggle-button']} onClick={clickButton}>
+      <div className={isArtistAdded ? FavoriteToggleButtonCSS['remove-button'] : FavoriteToggleButtonCSS['add-button']} onClick={clickButton}>
         {messagePrompt}
       </div>
       { messagePrompt === 'Enter' && renderCancelButtonAndInput()} 

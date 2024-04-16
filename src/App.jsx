@@ -87,6 +87,8 @@ export default function App() {
                          getImageIndex={getImageIndex}
                          pageNumber={switchComponent}
                          selectedArtist={selectedArtist}
+                         setSelectedArtist={setSelectedArtist}
+                         setFavoriteArtists={setFavoriteArtists}
                          mode={mode}
                          favoriteArtists={favoriteArtists} />
           ) : switchComponent === 3 ? (

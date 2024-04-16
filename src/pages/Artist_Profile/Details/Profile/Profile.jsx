@@ -14,7 +14,8 @@ export default function Profile(props) {
                               favoriteArtists={props.favoriteArtists}
                               name={props.name}
                               onImageClick={props.onImageClick}
-                              setFavoriteArtists={props.setFavoriteArtists} />
+                              setFavoriteArtists={props.setFavoriteArtists}
+                              setSelectedArtist={props.setSelectedArtist} />
       </div>
       
       
