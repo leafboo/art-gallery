@@ -8,4 +8,15 @@
 
 .artwork{
   height: 80vh;
+  animation: slide-show 1.4s forwards;
 }
+
+@keyframes slide-show {
+  0% {
+    opacity: .3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+ }
