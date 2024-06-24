@@ -1,4 +1,4 @@
-# ✏️ Art gallery project 
+# ✏️ Art gallery project(unfinished)
 A webapp(implement soon) where you can add illustrators that are in [Danbooru](https://danbooru.donmai.us/artists) to your favorites. Once added, you can then view their artworks through a slide show. 
 
 # ⚡ To run: 
@@ -31,3 +31,4 @@ A webapp(implement soon) where you can add illustrators that are in [Danbooru](h
 
 ![darkMode_add](https://github.com/leafboo/art-gallery/assets/110758056/da7ac709-62ec-4486-9ed3-d92423068d16)
 
+# 🎥 Demo
