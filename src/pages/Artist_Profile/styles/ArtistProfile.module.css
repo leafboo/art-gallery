@@ -1,10 +1,42 @@
 .artist-profile-container {
+  padding-top: 2.5rem;
   display: flex;
   justify-content: center;
+  padding-bottom: 5.5rem;
 }
 .inner-container {
   width: 75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.top-blur-dark-mode { 
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  background-image: linear-gradient( rgb(0, 0, 0), rgba(0,0,0,0));
+}
+.bottom-blur-dark-mode {
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background-image: linear-gradient( rgba(0,0,0,0), rgb(0, 0, 0));
+}
+
+.top-blur-light-mode { 
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  background-image: linear-gradient( rgb(255, 255, 255), rgba(255, 255, 255, 0));
+}
+.bottom-blur-light-mode {
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background-image: linear-gradient( rgba(255, 255, 255, 0), rgb(255, 255, 255));
 }

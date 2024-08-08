@@ -31,6 +31,8 @@ export default function ArtistProfile(props) {
   return (
     <div className={ArtistProfileCSS['artist-profile-container']}>
       <div className={ArtistProfileCSS['inner-container']}>
+        <div className={props.mode ? ArtistProfileCSS['top-blur-light-mode'] : ArtistProfileCSS['top-blur-dark-mode']}>
+        </div>
         { props.pageNumber === 4 && <BackButton BackButtonValue={3} onImageClick={props.onImageClick} /> }
         <Details artistData={artistData}
                  selectedArtist={pageNumber !== 4 ? props.selectedArtist : null}
@@ -42,6 +44,8 @@ export default function ArtistProfile(props) {
         <Artworks artistsData={artistData}
                   onImageClick={pageNumber !== 4 ? props.onImageClick : null} 
                   getImageIndex={props.getImageIndex} />
+        <div className={props.mode ? ArtistProfileCSS['bottom-blur-light-mode'] : ArtistProfileCSS['bottom-blur-dark-mode']}>
+        </div>
       </div>
     </div>
   )
