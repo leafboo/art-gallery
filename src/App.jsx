@@ -13,7 +13,9 @@ export default function App() {
     return localStorageValue !== null ? parseInt(localStorageValue) : 1
   })
   // save image index of clicked image to display in art gallery
-  const [currentImageIndex, setCurrentImageIndex] = React.useState(parseInt(localStorage.getItem('currentImageIndex')) ?? 3)
+  const storedIndex = Number(localStorage.getItem('currentImageIndex'));
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(isNaN(storedIndex) ? 0 : storedIndex)
+
   const [artistData, setArtistData] = React.useState([])
   const [unaddedArtistName, setUnaddedArtistName] = React.useState(localStorage.getItem('unaddedArtistName') ? localStorage.getItem('unaddedArtistName') : '')
   const [unaddedArtistData, setUnaddedArtistData] = React.useState(localStorage.getItem('unaddedArtistData') ? JSON.parse(localStorage.getItem('unaddedArtistData')) : [])
